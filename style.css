@@ -30,3 +30,12 @@
 .battle-art-image[hidden],.battle-art-placeholder[hidden],.battle-art-error[hidden],.battle-art-download[hidden]{display:none!important}
 .battle-art-download{display:block;text-align:center;margin:13px;text-decoration:none}
 @media(max-width:540px){.friend-mode{padding:13px 12px 9px}.friend-switch button{font-size:11px;padding:11px 5px}.battle-art-title{padding:11px 9px}}
+
+/* v3.1 diagnostics, visible AI fallback and image retry */
+.ai-test-panel{margin:18px 0 6px;display:grid;gap:10px}
+.ai-test-panel button{justify-self:start;max-width:100%}
+.ai-test-result{white-space:pre-wrap;overflow-wrap:anywhere;border:1px solid #64536e;border-radius:10px;background:#211a2c;padding:13px;color:#c9bdd8;font-size:12px;line-height:1.75}
+.ai-test-result[data-status="ok"]{border-color:#4a916b;color:#c7f5da}
+.ai-test-result[data-status="error"],.judge-error-notice{border:1px solid #ad625b;background:#3c252b;color:#ffe1ce;border-radius:12px;padding:15px;line-height:1.8;font-size:13px;margin:12px 0}
+.art-retry{margin:12px auto;display:block;max-width:90%}
+.art-retry[hidden],.judge-error-notice[hidden]{display:none!important}
