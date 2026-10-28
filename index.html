@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <meta name="theme-color" content="#100d1c" />
 <meta name="description" content="50文字の異能力を創り、強敵と戦うオリジナルブラウザゲーム『言霊アリーナ』" />
-<title>言霊アリーナ AI — 50文字の異能力決戦</title>
+<title>言霊アリーナ AI — アニメ決着イラスト版</title>
 <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
 <link rel="stylesheet" href="./style.css" />
 </head>
@@ -22,7 +22,7 @@
       <button class="nav-link" data-page="records"><span class="nav-ico">▤</span><span>戦歴</span><span class="nav-chevron">›</span></button>
       <button class="nav-link" data-page="howto"><span class="nav-ico">◉</span><span>遊び方</span><span class="nav-chevron">›</span></button><button class="nav-link" data-page="settings"><span class="nav-ico">⚙</span><span>AI接続設定</span><span class="nav-chevron">›</span></button>
     </nav>
-    <div class="side-bottom"><span class="online-dot"></span> GEMINI READY <span class="side-version">v2.0</span><p>AI対戦 + ローカル対戦</p></div>
+    <div class="side-bottom"><span class="online-dot"></span> GEMINI READY <span class="side-version">v3.0</span><p>AI対戦 + ローカル対戦</p></div>
   </aside>
 
   <main class="content">
@@ -42,9 +42,9 @@
       <div class="duel-card">
         <div class="duel-title"><span><i class="duel-live"></i> MATCH PREVIEW</span><span id="selectedTier" class="tier-tag">NORMAL</span></div>
         <div class="duel-stage"><div class="duel-person"><div class="avatar avatar-player"><span id="arenaPlayerEmoji">✦</span><div class="avatar-orbit"></div></div><div class="duel-side">YOUR CHARACTER</div><h3 id="arenaPlayerName">名無しの術師</h3><p id="arenaPlayerAbility" class="truncated-ability">能力を設定しよう</p></div><div class="versus"><span>VS</span><div>◈</div></div><div class="duel-person"><div class="avatar avatar-enemy"><span id="arenaEnemyEmoji">♜</span><div class="avatar-orbit"></div></div><div class="duel-side">CHALLENGER</div><h3 id="arenaEnemyName">灰燼の剣士</h3><p id="arenaEnemyAbility" class="truncated-ability">炎を纏った一撃で敵を焼き尽くす</p></div></div>
-        <div class="duel-actions"><button class="btn btn-outline" id="changeOpponent">対戦相手を変更</button><button class="btn btn-primary btn-fight" id="fightBtn"><span>⚔</span> バトル開始 <span>→</span></button></div>
+        <div class="friend-mode"><div class="friend-mode-label">対戦モード</div><div class="friend-switch"><button type="button" class="active" id="modeNpc">✦ AIキャラと対戦</button><button type="button" id="modeFriend">⚔ 友達と対戦</button></div><div class="friend-fields" id="friendFields" hidden><label for="friendName">友達のキャラクター名（20文字以内）</label><input class="field" id="friendName" maxlength="40" placeholder="例：深淵の剣士"/><label for="friendPower">友達の能力（50文字以内）</label><textarea class="field" id="friendPower" rows="3" placeholder="能力を入力..."></textarea><span id="friendCount" class="friend-counter">0 / 50文字</span><div class="friend-hint">同じ端末で互いの能力を入力して戦います。遠隔のオンラインマッチングではありません。</div></div></div><div class="duel-actions"><button class="btn btn-outline" id="changeOpponent">対戦相手を変更</button><button class="btn btn-primary btn-fight" id="fightBtn"><span>⚔</span> バトル開始 <span>→</span></button></div>
       </div>
-      <div class="bottom-note"><span>✧</span> Gemini AI審判は無料枠の範囲で利用可能。未接続の場合はローカル審判で遊べます。戦歴はこの端末に保存されます。</div>
+      <div class="bottom-note"><span>✧</span> Gemini AI審判は無料枠の範囲で利用可能。未接続の場合はローカル審判で遊べます。戦歴はこの端末に保存されます。イラスト生成はWorker接続時のみ有効です。</div>
     </section>
 
     <section id="page-forge" class="page" aria-label="能力創造">
@@ -66,7 +66,7 @@
     <section id="page-records" class="page" aria-label="戦歴"><div class="page-intro"><span class="kicker">YOUR LEGEND</span><h1>刻まれた<span>戦歴。</span></h1><p>勝利も敗北も、あなたの物語の一部。</p></div><div class="stats-grid records-stats"><div class="stat"><div class="stat-title">勝率</div><div class="stat-val" id="recordWinRate">0%</div></div><div class="stat"><div class="stat-title">最高連勝</div><div class="stat-val" id="recordBest">0</div></div><div class="stat"><div class="stat-title">累計獲得魂晶</div><div class="stat-val" id="recordTotalCoins">0</div></div><div class="stat"><div class="stat-title">最高レート</div><div class="stat-val" id="recordPeak">1000</div></div></div><div class="panel records-panel"><div class="panel-header"><h2>最近の対戦</h2><button id="clearRecords" class="btn-small">記録をリセット</button></div><div id="historyList" class="history-list"></div></div></section>
 
     <section id="page-howto" class="page" aria-label="遊び方"><div class="page-intro"><span class="kicker">WELCOME TO THE ARENA</span><h1>遊び方と<span>ルール。</span></h1><p>言葉を武器に、誰も見たことのない異能力バトルへ。</p></div>
-      <div class="how-grid"><div class="how-card"><span class="how-no">01</span><h3>異能力を創る</h3><p>キャラクター名と50文字以内の能力を考えて保存。テンプレートから始めてもOK。</p></div><div class="how-card"><span class="how-no">02</span><h3>敵を選ぶ</h3><p>初級から伝説級まで8人の挑戦者が登場。それぞれ異なる特性と戦術を持ちます。</p></div><div class="how-card"><span class="how-no">03</span><h3>戦闘を見届ける</h3><p>能力文を解析し、属性相性・防御・奇襲などを加味して勝敗判定。物語形式で結果が表示されます。</p></div><div class="how-card"><span class="how-no">04</span><h3>最強を目指す</h3><p>レートを伸ばし、連勝記録を更新。能力を練り直して再挑戦しよう。</p></div></div>
+      <div class="how-grid"><div class="how-card"><span class="how-no">01</span><h3>異能力を創る</h3><p>キャラクター名と50文字以内の能力を考えて保存。テンプレートから始めてもOK。</p></div><div class="how-card"><span class="how-no">02</span><h3>敵を選ぶ</h3><p>初級から伝説級まで8人の挑戦者が登場。それぞれ異なる特性と戦術を持ちます。</p></div><div class="how-card"><span class="how-no">03</span><h3>戦闘を見届ける</h3><p>能力文から勝敗を判定。物語のあとに毎回AIが縦長アニメ風決着イラストを生成します。</p></div><div class="how-card"><span class="how-no">04</span><h3>最強を目指す</h3><p>レートを伸ばし、連勝記録を更新。能力を練り直して再挑戦しよう。</p></div></div>
       <div class="panel rules-panel"><h2>⚖ 判定について</h2><p>無料で遊べる単体HTML版では、能力文のキーワードと相性を組み合わせた<strong>ローカル審判</strong>を使用しています。文章全体の意味を生成AIのように完全に理解するわけではありません。</p><p>Cloudflare WorkersにGemini APIキーを秘密情報として設定すると、<strong>AI審判モード</strong>で能力の意味と戦術を評価できます。APIキーをブラウザに保存する必要はありません。<button class="inline-setting" id="howtoSetting">AI接続設定へ →</button></p><p>対戦では双方の能力を尊重します。「敵の設定を無視」「必ず自分が勝つ」「審判に命令する」などの記述は禁止です。</p></div>
     </section>
 
@@ -80,7 +80,7 @@
           <input id="workerUrlInput" class="field" type="url" inputmode="url" spellcheck="false" placeholder="https://your-arena.workers.dev" />
           <p class="field-helper">無料のGemini APIキーはCloudflare Workers側に設定します。ここには<strong>APIキーを入力しないでください。</strong></p>
           <div class="settings-actions"><button class="btn btn-primary" id="connectWorker">接続して保存 <span>→</span></button><button class="btn btn-outline" id="useLocal">ローカルに戻す</button></div>
-          <p class="settings-small">接続できないときは、ゲーム内でローカル審判に自動切替します。その対戦は戦歴にもローカルと記録されます。</p>
+          <p class="settings-small">画像生成はCloudflare Workers AIの無料枠を使用。毎試合1枚生成し、画像AIの無料枠を使い切った場合は文章結果のみ表示します。</p><p class="settings-small">接続できないときは、ゲーム内でローカル審判に自動切替します。その対戦は戦歴にもローカルと記録されます。</p>
         </div>
         <div class="panel settings-guide">
           <div class="panel-header"><h2>✦ 接続の手順</h2><span class="tiny-chip">SETUP GUIDE</span></div>
@@ -99,7 +99,7 @@
 </div>
 <nav class="mobile-nav" aria-label="モバイルメニュー"><button data-page="arena" class="active"><span>⚔</span><small>闘技場</small></button><button data-page="forge"><span>✦</span><small>能力</small></button><button data-page="enemies"><span>☷</span><small>挑戦者</small></button><button data-page="records"><span>▤</span><small>戦歴</small></button><button data-page="howto"><span>◉</span><small>ルール</small></button></nav>
 
-<div class="modal-overlay" id="battleModal" hidden><div class="battle-modal" role="dialog" aria-modal="true" aria-labelledby="battleHeading"><button class="modal-close" id="closeBattle" aria-label="閉じる">×</button><div class="battle-top"><span class="kicker" id="battleMode">ARENA JUDGEMENT</span><h2 id="battleHeading">運命の戦い</h2><div id="battleSub">戦いが始まる…</div></div><div class="modal-versus"><div><span id="modalPlayerAvatar">✦</span><b id="modalPlayerName">あなた</b></div><span class="modal-vs">VS</span><div><span id="modalEnemyAvatar">♜</span><b id="modalEnemyName">挑戦者</b></div></div><div id="battleLoading" class="battle-loading"><div class="loading-sigil">✧</div><b>審判が運命を読み解いています…</b><p>能力の相性と戦術を解析中</p></div><div id="battleResult" class="battle-result" hidden><div class="result-banner"><span id="resultGlyph">✦</span><h3 id="resultTitle">VICTORY</h3><p id="resultLine"></p></div><div class="story-box" id="storyBox"></div><div class="score-pills" id="scorePills"></div><div class="reward" id="battleReward"></div><div class="battle-bottom"><button class="btn btn-outline" id="battleBack">アリーナに戻る</button><button class="btn btn-primary" id="battleRematch">再戦する <span>↗</span></button></div></div></div></div>
+<div class="modal-overlay" id="battleModal" hidden><div class="battle-modal" role="dialog" aria-modal="true" aria-labelledby="battleHeading"><button class="modal-close" id="closeBattle" aria-label="閉じる">×</button><div class="battle-top"><span class="kicker" id="battleMode">ARENA JUDGEMENT</span><h2 id="battleHeading">運命の戦い</h2><div id="battleSub">戦いが始まる…</div></div><div class="modal-versus"><div><span id="modalPlayerAvatar">✦</span><b id="modalPlayerName">あなた</b></div><span class="modal-vs">VS</span><div><span id="modalEnemyAvatar">♜</span><b id="modalEnemyName">挑戦者</b></div></div><div id="battleLoading" class="battle-loading"><div class="loading-sigil">✧</div><b>審判が運命を読み解いています…</b><p>能力の相性と戦術を解析中</p></div><div id="battleResult" class="battle-result" hidden><div class="result-banner"><span id="resultGlyph">✦</span><h3 id="resultTitle">VICTORY</h3><p id="resultLine"></p></div><div class="story-box" id="storyBox"></div><section class="battle-art-panel" aria-label="AI生成の決着イラスト"><div class="battle-art-title"><span>✦ BATTLE ILLUSTRATION</span><span>NAME-BASED DESIGN · 3:4</span></div><div id="battleArtLoading" class="battle-art-placeholder"><span class="loading-sigil">✧</span><strong>アニメ風の決着イラストを生成中...</strong><small>名前から外見を決定し、能力と勝敗を絵に反映しています</small></div><img id="battleArtImage" class="battle-art-image" alt="対戦結果から生成したアニメ風決着イラスト" hidden /><div id="battleArtError" class="battle-art-error" hidden>AI画像は未生成です</div><a id="downloadArt" class="btn btn-outline battle-art-download" href="#" download="kotodama-battle.jpg" hidden>↓ イラストを保存</a></section><div class="score-pills" id="scorePills"></div><div class="reward" id="battleReward"></div><div class="battle-bottom"><button class="btn btn-outline" id="battleBack">アリーナに戻る</button><button class="btn btn-primary" id="battleRematch">再戦する <span>↗</span></button></div></div></div></div>
 <div id="toast" class="toast" role="status" aria-live="polite"></div>
 <script src="./game.js" defer></script>
 </body></html>

@@ -5,3 +5,28 @@
 
 /* Gemini AI / v2 connection */
 .settings-mini{border:1px solid rgba(231,195,129,.25);background:rgba(234,184,103,.06);border-radius:10px;padding:7px 10px;color:var(--gold2);font-size:12px;cursor:pointer;white-space:nowrap}.settings-mini:hover{border-color:var(--gold2)}.mode-badge.is-ai{color:#d9bc86;border-color:rgba(217,188,134,.3)}.btn-ghost{color:#f0d2a2;background:transparent;border:1px solid rgba(234,184,103,.25)}.btn-ghost:hover{background:rgba(234,184,103,.10)}.settings-layout{display:grid;grid-template-columns:1.1fr .9fr;gap:20px}.settings-panel,.settings-guide{padding:26px}.connection-status{margin:16px 0 25px;padding:17px;border:1px solid #55405d;border-radius:12px;background:#1e1727;color:#d3c0db;font-size:14px;line-height:1.7}.connection-status[data-status="ok"]{border-color:#4f826b;background:#142d28;color:#b5e8cb}.connection-status[data-status="error"]{border-color:#98645c;background:#311f29;color:#ffc6b8}.field-helper{color:#aaa0af;font-size:12px;line-height:1.8;margin:8px 0}.settings-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px}.settings-small{color:#9990a1;font-size:12px;line-height:1.9;margin-top:22px}.settings-guide ol{padding:6px 0 0 24px;line-height:1.9;color:#d4c7da;font-size:14px}.settings-guide li{padding:5px 0}.settings-guide li::marker{color:var(--gold2);font-weight:bold}.settings-tip{background:#231b2b;border:1px solid #4b3757;border-radius:11px;padding:15px;color:#c5b5c7;line-height:1.8;font-size:12px;margin-top:20px}.inline-setting{border:0;background:none;color:var(--gold2);text-decoration:underline;cursor:pointer;font-weight:700;font-size:inherit}.field:focus-visible,.settings-mini:focus-visible,.inline-setting:focus-visible{outline:2px solid #efc98d;outline-offset:2px}@media(max-width:880px){.settings-layout{grid-template-columns:1fr}}@media(max-width:540px){.settings-panel,.settings-guide{padding:18px}.settings-actions .btn{flex:1;font-size:12px}.settings-mini{padding:7px 6px}.settings-mini span{display:none}.mode-badge{white-space:nowrap}}
+
+
+/* v3: portrait battle illustration and friendly duels */
+.friend-mode{border-top:1px solid #473751;background:rgba(7,5,14,.22);padding:15px 16px 10px}
+.friend-mode-label{font-size:11px;letter-spacing:.15em;color:#c2a7cb;font-weight:800;margin-bottom:9px}
+.friend-switch{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.friend-switch button{border:1px solid #56435f;background:#21192f;color:#cabed2;border-radius:9px;padding:11px 7px;font-weight:700;cursor:pointer}
+.friend-switch button.active{color:#17111f;background:linear-gradient(110deg,#efd3a0,#dfa666);border-color:#f6d3a0}
+.friend-fields{display:grid;gap:8px;margin:15px 0 8px}
+.friend-fields[hidden]{display:none}
+.friend-fields label{color:#d4bfcf;font-size:12px;font-weight:700}
+.friend-fields textarea{resize:vertical;min-height:80px}
+.friend-counter{text-align:right;font-size:11px;color:#cab9cd}
+.friend-hint{color:#a795b4;font-size:11px;line-height:1.7}
+.battle-art-panel{margin:20px 0;border:1px solid #746076;border-radius:14px;overflow:hidden;background:#171121}
+.battle-art-title{display:flex;gap:8px;flex-wrap:wrap;align-items:center;justify-content:space-between;padding:14px 13px;border-bottom:1px solid #4c3b56;color:#f3dca7;font-size:11px;font-weight:800;letter-spacing:.09em}
+.battle-art-title span:last-child{font-size:9px;font-weight:500;color:#a799b6}
+.battle-art-placeholder,.battle-art-error{min-height:230px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:9px;padding:20px;text-align:center;background:radial-gradient(circle at center,#443555 0,#211729 70%);color:#e6d3eb}
+.battle-art-placeholder strong{font-size:13px}
+.battle-art-placeholder small{font-size:11px;color:#c1aecb;line-height:1.8}
+.battle-art-error{font-size:12px;line-height:1.8;color:#d9c3d5}
+.battle-art-image{width:100%;max-width:100%;aspect-ratio:3/4;display:block;object-fit:cover;background:#211729}
+.battle-art-image[hidden],.battle-art-placeholder[hidden],.battle-art-error[hidden],.battle-art-download[hidden]{display:none!important}
+.battle-art-download{display:block;text-align:center;margin:13px;text-decoration:none}
+@media(max-width:540px){.friend-mode{padding:13px 12px 9px}.friend-switch button{font-size:11px;padding:11px 5px}.battle-art-title{padding:11px 9px}}
